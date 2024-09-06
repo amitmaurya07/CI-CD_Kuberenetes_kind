@@ -7,8 +7,11 @@ pipeline{
         }
         stage("Build"){
             steps{
-                docker build -t web-application:1 .
+                script {
+                    docker build -t web-application:1 .
+                }
         }
     }
+}
 }
 }
