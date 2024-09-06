@@ -10,7 +10,7 @@ pipeline{
                 script {
                     docker build -t web-application:1 .
                 }
-        }
+        }    }
     }
 }
 }
