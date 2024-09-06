@@ -7,7 +7,7 @@ pipeline{
         }
         stage("Build"){
             steps{
-                docker build -t amitmau07/we-application:1
+                docker build -t amitmau07/web-application:1 .
         }
     }
 }
