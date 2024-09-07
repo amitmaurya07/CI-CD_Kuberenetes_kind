@@ -19,10 +19,20 @@ pipeline {
             steps {
                 script {
                     withCredentials([usernamePassword(credentialsId: 'dockerhub', passwordVariable: 'Docker_Passs', usernameVariable: 'Docker_Username')]) {
-                        sh 'docker login -u amaurya07 -p ${Docker_Passs} '
+                        sh 'docker login -u amaurya07 -p ${Docker_Passs}'
+                        sh 'docker push amaurya07/web-application'
                 }
                 }
             }
         }
+
+        stage("Deploy to Kubernetes cluster") {
+            steps {
+                kubeconfig(credentialsId: 'k8s-secret', serverUrl: ' https://192.168.58.2:8443') {
+    // some block
+}
+            }
+        }
+
     }
 }
