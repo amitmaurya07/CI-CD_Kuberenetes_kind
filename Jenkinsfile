@@ -48,7 +48,7 @@ pipeline {
                 5FX4zry9iQxFP8Uu71d9YWgzqP0tJC+9PRlARpoZq4gTGgllfAXgJ/zRSI0yPMDx
                 ruv00gJ+feoOfA==
                 -----END CERTIFICATE-----''', credentialsId: 'k8s-secret', serverUrl: 'https://192.168.58.2:8443') {
-                    sh 'kubectl get nodes'
+                    sh 'kubectl get nodes --insecure-skip-tls-verify=true'
                 }
             }
         }
