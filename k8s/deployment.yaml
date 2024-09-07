@@ -19,7 +19,7 @@ spec:
         image: amaurya07/web-application:1
         imagePullPolicy: Always
         ports: 
-          - containerPort: 3000
+          - containerPort: 4000
 
 --- 
 
@@ -32,6 +32,6 @@ spec:
     app: webapp
   ports:
     - protocol: TCP
-      port: 3000
-      targetPort: 3000
+      port: 4000
+      targetPort: 4000
   type: NodePort
