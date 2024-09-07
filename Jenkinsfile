@@ -26,13 +26,13 @@ pipeline {
             }
         }
 
-        stage("Deploy to Kubernetes cluster") {
-            steps {
-                kubeconfig(credentialsId: 'k8s-secret', serverUrl: ' https://192.168.58.2:8443') {
-    // some block
-}
-            }
-        }
+//         stage("Deploy to Kubernetes cluster") {
+//             steps {
+//                 kubeconfig(credentialsId: 'k8s-secret', serverUrl: ' https://192.168.58.2:8443') {
+//     // some block
+// }
+//             }
+//         }
 
     }
 }
