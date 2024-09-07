@@ -26,13 +26,5 @@ pipeline {
                 }
             }
         }
-
-        stage("Deploy to Kubernetes cluster") {
-            steps {
-                withKubeConfig(caCertificate: '', clusterName: 'minikube', contextName: '', credentialsId: 'k8s-secret', namespace: 'deploy', restrictKubeConfigAccess: false, serverUrl: 'https://192.168.58.2:8443') {
-                        sh 'kubectl get nodes'
-                    }
-            }
-        }
     }
 }
