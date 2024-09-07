@@ -22,18 +22,17 @@ pipeline {
                         sh 'docker login -u amaurya07 -p ${Docker_Passs}'
                         sh 'docker tag web-application:1 amaurya07/web-application:1'
                         sh 'docker push amaurya07/web-application:1'
-                }
+                    }
                 }
             }
         }
 
-//         stage("Deploy to Kubernetes cluster") {
-//             steps {
-//                 kubeconfig(credentialsId: 'k8s-secret', serverUrl: ' https://192.168.58.2:8443') {
-//     // some block
-// }
-//             }
-//         }
-
+        stage("Deploy to Kubernetes cluster") {
+            steps {
+                kubeconfig(credentialsId: 'k8s-secret', serverUrl: 'https://192.168.58.2:8443') {
+                    sh ''
+                }
+            }
+        }
     }
 }
