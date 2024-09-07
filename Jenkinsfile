@@ -24,7 +24,5 @@ pipeline {
                 }
             }
         }
-
-        stage
     }
 }
