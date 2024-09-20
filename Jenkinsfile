@@ -30,7 +30,7 @@ pipeline {
         stage("Deploy to Kubernetes Cluster") {
             steps {
                 script {
-                    withKubeConfig(caCertificate: '', clusterName: 'minikube', contextName: '', credentialsId: 'k8s-secret', namespace: 'deploy', restrictKubeConfigAccess: false, serverUrl: 'https://192.168.76.2:8443') {
+                    withKubeConfig(caCertificate: '', clusterName: 'minikube', contextName: '', credentialsId: 'k8s-secret', namespace: 'deploy', restrictKubeConfigAccess: false, serverUrl: 'https://192.168.49.2:8443') {
                         sh 'kubectl get nodes'
                     }
                 }
