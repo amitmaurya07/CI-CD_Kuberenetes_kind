@@ -4,6 +4,17 @@ metadata:
   namespace: deploy
   name: web-app
 rules:
-- apiGroups: ["*"] # "" indicates the core API group
+# Core API group for resources like pods, services, etc.
+- apiGroups: [""] 
   resources: ["*"]
+  verbs: ["get", "watch", "list", "create", "update", "patch", "delete"]
+
+# Permissions for resources in the apps API group (e.g., deployments)
+- apiGroups: ["apps"]
+  resources: ["deployments"]
+  verbs: ["get", "watch", "list", "create", "update", "patch", "delete"]
+
+# Permissions for role and rolebindings in the rbac.authorization.k8s.io API group
+- apiGroups: ["rbac.authorization.k8s.io"]
+  resources: ["roles", "rolebindings"]
   verbs: ["get", "watch", "list", "create", "update", "patch", "delete"]
