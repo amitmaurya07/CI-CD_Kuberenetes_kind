@@ -5,5 +5,5 @@ metadata:
   name: web-app
 rules:
 - apiGroups: [""] # "" indicates the core API group
-  resources: [""]
+  resources: ["*"]
   verbs: ["get", "watch", "list", "create", "update", "patch", "delete"]
