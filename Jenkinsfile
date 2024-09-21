@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage("Checkout") {
             steps {
-                git branch: 'main', url: 'https://github.com/amitmaurya07/CI-CD_Oriserve.git'
+                git branch: 'main', url: 'https://github.com/amitmaurya07/CI-CD_Kuberenetes_kind.git'
             }
         }
 
